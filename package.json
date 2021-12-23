@@ -7,11 +7,17 @@
     "declarations": true
   },
   "dependencies": {
+    "commitizen": "^4.2.4",
+    "commitlint": "^15.0.0",
+    "cz-conventional-changelog": "^3.3.0",
     "egg": "^2.15.1",
     "egg-mysql": "^3.0.0",
-    "egg-scripts": "^2.11.0"
+    "egg-scripts": "^2.11.0",
+    "husky": "^7.0.4"
   },
   "devDependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
     "autod": "^3.0.1",
     "autod-egg": "^1.1.0",
     "egg-bin": "^4.11.0",
@@ -32,9 +38,11 @@
     "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",
     "cov": "egg-bin cov",
-    "lint": "eslint .",
+    "lint": "eslint . --ext .js --cache --fix",
     "ci": "npm run lint && npm run cov",
-    "autod": "autod"
+    "autod": "autod",
+    "prepare": "husky install",
+    "commit": "git-cz"
   },
   "ci": {
     "version": "10"
@@ -44,5 +52,10 @@
     "url": ""
   },
   "author": "Silence-dream",
-  "license": "MIT"
+  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
 }
