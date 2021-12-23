@@ -7,6 +7,7 @@
     "declarations": true
   },
   "dependencies": {
+    "apidoc": "^0.50.2",
     "commitizen": "^4.2.4",
     "commitlint": "^15.0.0",
     "cz-conventional-changelog": "^3.3.0",
@@ -42,7 +43,8 @@
     "ci": "npm run lint && npm run cov",
     "autod": "autod",
     "prepare": "husky install",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "apidoc":"apidoc -i app -o apidoc"
   },
   "ci": {
     "version": "10"

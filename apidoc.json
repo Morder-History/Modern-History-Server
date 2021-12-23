@@ -1,0 +1,15 @@
+{
+  "name": "近代史;抗日战争",
+  "title": "近代史:抗日战争",
+  "description": "API接口文档",
+  "url": "https://www.google.com",
+  "version": "1.0.0",
+  "header": {
+    "title": "开头",
+    "filename": "readme.md"
+  },
+  "footer": {
+    "title": "结尾",
+    "filename": "readme.md"
+  }
+}
