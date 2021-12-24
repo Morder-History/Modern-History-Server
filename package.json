@@ -44,7 +44,7 @@
     "autod": "autod",
     "prepare": "husky install",
     "commit": "git-cz",
-    "apidoc":"apidoc -i app -o apidoc"
+    "apidoc":"apidoc -i app -o app/public/api"
   },
   "ci": {
     "version": "10"

@@ -12,4 +12,4 @@ run/
 typings/
 .nyc_output/
 .eslintcache
-apidoc
+app/public/api

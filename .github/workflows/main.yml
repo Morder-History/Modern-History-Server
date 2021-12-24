@@ -36,8 +36,10 @@ jobs:
             ls
             yarn -v
             yarn install
+            yarn apidoc
             yarn stop
             yarn start
+
 
 
 
