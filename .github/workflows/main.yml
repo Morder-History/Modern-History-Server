@@ -34,7 +34,9 @@ jobs:
           script: |
             cd ${{secrets.TARGET}}
             ls
+            yarn -v
             yarn install
             yarn stop
             yarn start
+
 
