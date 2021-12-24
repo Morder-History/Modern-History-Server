@@ -33,6 +33,6 @@ jobs:
           key: ${{ secrets.ACCESS_TOKEN }}
           script: |
             cd ${{secrets.TARGET}}
-            npm install
-            npm run stop
-            npm run start
+            yarn install
+            yarn stop
+            yarn start
