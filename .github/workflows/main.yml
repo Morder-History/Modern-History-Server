@@ -32,7 +32,7 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.ACCESS_TOKEN }}
           script: |
-            cd ${{secrets.TARGET}}
+            cd /root/Mycode/Modern-History-Server
             npm i yarn -g
             ls
             yarn -v
