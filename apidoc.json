@@ -6,10 +6,10 @@
   "version": "1.0.0",
   "header": {
     "title": "开头",
-    "filename": "readme.md"
+    "filename": "README.md"
   },
   "footer": {
     "title": "结尾",
-    "filename": "readme.md"
+    "filename": "README.md"
   }
 }
