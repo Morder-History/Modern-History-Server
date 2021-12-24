@@ -33,10 +33,12 @@ jobs:
           key: ${{ secrets.ACCESS_TOKEN }}
           script: |
             cd ${{secrets.TARGET}}
+            npm i yarn -g
             ls
             yarn -v
             yarn install
             yarn stop
             yarn start
+
 
 
