@@ -5,7 +5,9 @@ const Controller = require('egg').Controller;
 class HomeController extends Controller {
   async index() {
     const { ctx } = this;
-    ctx.body = '你好,世界';
+    ctx.body = `
+    ${process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:3010/public/api/index.html' : 'http://47.108.197.220:3010/public/api/index.html'}
+    `;
   }
   async home() {
     const { ctx, service } = this;
