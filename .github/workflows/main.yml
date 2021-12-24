@@ -1,4 +1,4 @@
-	name: GitHub Actions deploy
+name: GitHub Actions deploy
 on:
   push:
     branches:
@@ -24,3 +24,15 @@ jobs:
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.TARGET }}
+
+      - name: Deploy🚀
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.REMOTE_USER }}
+          script: |
+            cd ${secrets.TARGET}
+            npm install
+            npm run stop
+            npm run start
