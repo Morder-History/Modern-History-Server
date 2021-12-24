@@ -11,7 +11,11 @@ module.exports = appInfo => {
    * @type {Egg.EggAppConfig}
    **/
   const config = exports = {};
-
+  // 跨域配置
+  config.cors = {
+    origin: '*', // 表示允许的源
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH', // 表示允许的http请求方式
+  };
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1640174987973_4111';
 

@@ -1,6 +1,6 @@
 /**
  *
- * @api {/api/v1/home} /api/v1/home 主页
+ * @api {GET} /api/v1/home 主页
  * @apiName 主页
  * @apiGroup Home
  * @apiVersion  1.0.0
