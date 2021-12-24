@@ -22,7 +22,14 @@ module.exports = appInfo => {
   const userConfig = {
     // myAppName: 'egg',
   };
-
+  // 端口配置
+  config.cluster = {
+    listen: {
+      port: 3010,
+      // hostname: '127.0.0.1',
+      // path: '/var/run/egg.sock',
+    },
+  };
   // mysql
   config.mysql = {
     // 单数据库信息配置
@@ -42,6 +49,12 @@ module.exports = appInfo => {
     app: true,
     // 是否加载到 agent 上，默认关闭
     agent: false,
+  };
+  config.security = {
+    // CSRF
+    csrf: {
+      enable: false,
+    },
   };
   return {
     ...config,
