@@ -25,3 +25,14 @@
   * @apiSampleRequest http://47.108.197.220:3010/api/v1/warInfo
   *
   */
+
+/** 获取战争(地图)信息时间线 /api/v1/warTime 战争(地图)信息时间线
+  *
+  * @api {GET} /api/v1/warTime 战争(地图)信息时间线
+  * @apiName 战争(地图)信息时间线
+  * @apiGroup war
+  * @apiVersion  1.0.0
+  * @apiParam  {number} year=1937 年份 1937
+  * @apiSampleRequest http://47.108.197.220:3010/api/v1/warTime
+  *
+  */
