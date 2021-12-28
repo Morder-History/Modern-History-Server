@@ -13,7 +13,7 @@ class WarInfoService extends Service {
         war_name: item.war_name,
         start_time: item.s_time,
         end_time: item.end_time,
-        location: item.location,
+        location: JSON.parse(item.location),
         war_details: item.war_details,
         war_details_markdown: item.war_details_markdown,
       });
