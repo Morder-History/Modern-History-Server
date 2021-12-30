@@ -41,6 +41,11 @@ class HomeService extends Service {
     }
     return data;
   }
+  async getHomeTimeLine() {
+    const result = await this.app.mysql.select('hometimeline');
+    console.log(result);
+    return result;
+  }
 }
 
 module.exports = HomeService;

@@ -9,9 +9,19 @@ class HomeController extends Controller {
     ${process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:3010/public/api/index.html' : 'http://47.108.197.220:3010/public/api/index.html'}
     `;
   }
+  // 首页一屏数据
   async home() {
     const { ctx, service } = this;
     const data = await service.home.getHomeData();
+    ctx.body = {
+      code: 200,
+      data,
+    };
+  }
+  // 首页二屏数据
+  async homeTimeLine() {
+    const { ctx, service } = this;
+    const data = await service.home.getHomeTimeLine();
     ctx.body = {
       code: 200,
       data,
