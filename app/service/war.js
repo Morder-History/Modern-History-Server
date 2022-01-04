@@ -22,23 +22,24 @@ class WarInfoService extends Service {
   async getWarInfoTimeLine(year = 1937) {
     const result = await this.app.mysql.query(`
     SELECT
-    winfo.id,
-    winfo.war_name,
-    winfo.start_time,
-    wtime.warfareCenter
-    from warinfo as winfo,war_timeline as wtime
-    WHERE winfo.start_time = wtime.start_time
-    AND YEAR(winfo.start_time) = ${year}
-    ORDER BY winfo.start_time;
+    id,
+    warName,
+    startTime,
+    warfareCenter,
+    personageInfo
+    FROM war_timeline
+    WHERE YEAR(startTime) = ${year}
+    ORDER BY startTime ASC
     `);
     // 处理返回的数据
     const data = [];
     result.forEach(item => {
       data.push({
         id: item.id,
-        warName: item.war_name,
-        startTime: item.start_time,
+        warName: item.warName,
+        startTime: item.startTime,
         warfareCenter: JSON.parse(item.warfareCenter),
+        personageInfo: JSON.parse(item.personageInfo),
       });
     });
     return data;
