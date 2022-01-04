@@ -19,7 +19,9 @@ class WarInfoService extends Service {
     return data;
   }
   // 获取战争(地图)信息时间线
-  async getWarInfoTimeLine(year = 1937) {
+  async getWarInfoTimeLine(year) {
+    // 处理默认值
+    year = year === 0 ? year = 1937 : year;
     const result = await this.app.mysql.query(`
     SELECT
     id,
