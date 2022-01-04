@@ -41,6 +41,10 @@ class HomeService extends Service {
     }
     return data;
   }
+  async getHomeTimeLine() {
+    const result = await this.app.mysql.query('SELECT id,title,date from hometimeline ORDER BY date ASC;');
+    return result;
+  }
 }
 
 module.exports = HomeService;

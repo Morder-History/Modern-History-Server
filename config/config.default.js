@@ -55,6 +55,7 @@ module.exports = appInfo => {
     agent: false,
   };
   config.security = {
+    domainWhiteList: [ '*' ],
     // CSRF
     csrf: {
       enable: false,
