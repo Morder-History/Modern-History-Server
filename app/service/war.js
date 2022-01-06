@@ -28,7 +28,8 @@ class WarInfoService extends Service {
     warName,
     startTime,
     warfareCenter,
-    personageInfo
+    personageInfo,
+    warIntroduce
     FROM war_timeline
     WHERE YEAR(startTime) = ${year}
     ORDER BY startTime ASC
@@ -42,6 +43,7 @@ class WarInfoService extends Service {
         startTime: item.startTime,
         warfareCenter: JSON.parse(item.warfareCenter),
         personageInfo: JSON.parse(item.personageInfo),
+        warIntroduce: item.warIntroduce,
       });
     });
     return data;
