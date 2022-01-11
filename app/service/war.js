@@ -21,18 +21,24 @@ class WarInfoService extends Service {
   // 获取战争(地图)信息时间线
   async getWarInfoTimeLine(year) {
     // 处理默认值
-    year = year === 0 ? year = 1937 : year;
+    year = year === 0 ? (year = 1937) : year;
+    await this.app.mysql.query('SET SESSION group_concat_max_len = 10240;');
+    await this.app.mysql.query('SET GLOBAL group_concat_max_len = 10240;');
     const result = await this.app.mysql.query(`
-    SELECT
-    id,
-    warName,
-    startTime,
-    warfareCenter,
-    personageInfo,
-    warIntroduce
-    FROM war_timeline
-    WHERE YEAR(startTime) = ${year}
-    ORDER BY startTime ASC
+    SELECT DISTINCT wt.id,wt.warName,wt.startTime,wt.warfareCenter,
+    CONCAT('[',
+      GROUP_CONCAT(
+      CONCAT('{"name":"', wp.name, '",'),
+      CONCAT('"birth":"', wp.birth, '",'),
+      CONCAT('"jianjie":"', wp.jianjie, '",'),
+      CONCAT('"picture":"', wp.picture, '",'),
+      CONCAT('"shengping":"', IFNULL(wp.shengping,''), '"}')),
+      ']') AS personageInfo
+    FROM war_and_person as wap
+    INNER JOIN war_timeline as wt ON wt.warID = wap.warID AND YEAR(wt.startTime) = ${year}
+    INNER JOIN war_person as wp ON wp.personID = wap.personID
+    GROUP BY wt.id
+    ORDER BY wt.startTime ASC;
     `);
     // 处理返回的数据
     const data = [];
