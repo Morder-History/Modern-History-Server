@@ -33,7 +33,8 @@ class WarInfoService extends Service {
       CONCAT('"jianjie":"', wp.jianjie, '",'),
       CONCAT('"picture":"', wp.picture, '",'),
       CONCAT('"shengping":"', IFNULL(wp.shengping,''), '"}')),
-      ']') AS personageInfo
+      ']') AS personageInfo,
+      wt.warIntroduce
     FROM war_and_person as wap
     INNER JOIN war_timeline as wt ON wt.warID = wap.warID AND YEAR(wt.startTime) = ${year}
     INNER JOIN war_person as wp ON wp.personID = wap.personID
