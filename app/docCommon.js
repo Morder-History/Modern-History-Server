@@ -47,3 +47,13 @@
   * @apiSampleRequest http://47.108.197.220:3010/api/v1/warTime
   *
   */
+
+/** 获取 918 视频 /api/v1/video918 获取 918 视频
+  *
+  * @api {GET} /api/v1/video918 获取 918 视频
+  * @apiName 获取 918 视频
+  * @apiGroup video
+  * @apiVersion  1.0.0
+  * @apiSampleRequest http://47.108.197.220:3010/api/v1/video918
+  *
+  */

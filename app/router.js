@@ -11,4 +11,5 @@ module.exports = app => {
   router.get('/api/v1/warInfo', controller.war.getWarInfo);
   router.get('/api/v1/warTime', controller.war.getWarInfoTimeLine);
   router.get('/test', controller.test.test);
+  router.get('/api/v1/video918', controller.video.getVideo918);
 };

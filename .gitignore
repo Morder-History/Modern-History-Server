@@ -13,3 +13,5 @@ typings/
 .nyc_output/
 .eslintcache
 app/public/api
+*.mp4
+*.avi
