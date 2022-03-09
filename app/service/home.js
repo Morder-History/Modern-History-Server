@@ -10,12 +10,11 @@ class HomeService extends Service {
     description,
     image,
     JSON_EXTRACT(moreInfo_otherName,"$[*]") as moreInfo_otherName,
-    moreInfo_happenTiem,
+    moreInfo_happenTiem as happenTiem,
     moreInfo_place,
     moreInfo_mainPerson_china,
     moreInfo_mainPerson_japan,
-    moreInfo_consequence,
-    moreInfo_result
+    moreInfo_result as result
     from home;
     `);
     // 返回的数据结构
