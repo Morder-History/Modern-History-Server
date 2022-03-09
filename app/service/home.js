@@ -10,13 +10,14 @@ class HomeService extends Service {
     description,
     image,
     JSON_EXTRACT(moreInfo_otherName,"$[*]") as moreInfo_otherName,
-    moreInfo_happenTiem as happenTiem,
+    moreInfo_happenTime as happenTime,
     moreInfo_place,
     moreInfo_mainPerson_china,
     moreInfo_mainPerson_japan,
     moreInfo_result as result
     from home;
     `);
+    console.log(result);
     // 返回的数据结构
     const data = [];
     for (let i = 0; i < result.length; i++) {
@@ -27,7 +28,7 @@ class HomeService extends Service {
         image: result[i].image,
         moreInfo: {
           otherName: JSON.parse(result[i].moreInfo_otherName),
-          happenTiem: result[i].moreInfo_happenTime,
+          happenTime: result[i].happenTime,
           place: result[i].moreInfo_place,
           mainPerson: {
             china: result[i].moreInfo_mainPerson_china,
