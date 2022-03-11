@@ -17,7 +17,6 @@ class HomeService extends Service {
     moreInfo_result as result
     from home;
     `);
-    console.log(result);
     // 返回的数据结构
     const data = [];
     for (let i = 0; i < result.length; i++) {
