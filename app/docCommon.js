@@ -12,7 +12,7 @@
  * @apiName 主页
  * @apiGroup Home
  * @apiVersion  1.0.0
- * @apiSampleRequest http://120.27.136.149:3010/api/v1/home
+ * @apiSampleRequest http://101.132.66.101:3010/api/v1/home
  *
  */
 
@@ -23,7 +23,7 @@
  * @apiName 主页二屏
  * @apiGroup Home
  * @apiVersion  1.0.0
- * @apiSampleRequest http://120.27.136.149:3010/api/v1/homeTimeLine
+ * @apiSampleRequest http://101.132.66.101:3010/api/v1/homeTimeLine
  *
  */
 
@@ -33,7 +33,7 @@
  * @apiName 战争信息
  * @apiGroup war
  * @apiVersion  1.0.0
- * @apiSampleRequest http://120.27.136.149:3010/api/v1/warInfo
+ * @apiSampleRequest http://101.132.66.101:3010/api/v1/warInfo
  *
  */
 
@@ -44,7 +44,7 @@
  * @apiGroup war
  * @apiVersion  1.0.0
  * @apiParam  {number} year=1937 年份 1937
- * @apiSampleRequest http://120.27.136.149:3010/api/v1/warTime
+ * @apiSampleRequest http://101.132.66.101:3010/api/v1/warTime
  *
  */
 
@@ -54,6 +54,6 @@
  * @apiName 获取 918 视频
  * @apiGroup video
  * @apiVersion  1.0.0
- * @apiSampleRequest http://120.27.136.149:3010/api/v1/video918
+ * @apiSampleRequest http://101.132.66.101:3010/api/v1/video918
  *
  */

@@ -6,7 +6,7 @@ class HomeController extends Controller {
   async index() {
     const { ctx } = this;
     ctx.body = `
-    ${process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:3010/public/api/index.html' : 'http://120.27.136.149:3010/public/api/index.html'}
+    ${process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:3010/public/api/index.html' : 'http://101.132.66.101:3010/public/api/index.html'}
     `;
   }
   // 首页一屏数据
