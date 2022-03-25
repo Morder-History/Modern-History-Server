@@ -1,5 +1,6 @@
 'use strict';
 const Service = require('egg').Service;
+const dayjs = require('dayjs');
 class WarInfoService extends Service {
   // 获取战争信息
   async getWarInfo() {
@@ -32,8 +33,12 @@ class WarInfoService extends Service {
       CONCAT('"birth":"', wp.birth, '",'),
       CONCAT('"jianjie":"', wp.jianjie, '",'),
       CONCAT('"picture":"', wp.picture, '",'),
+			CONCAT('"photos":', wp.photos, ','),
+			CONCAT('"birthday":"', wp.birthday, '",'),
+			CONCAT('"deathdate":"', wp.deathdate, '",'),
       CONCAT('"shengping":"', IFNULL(wp.shengping,''), '"}')),
       ']') AS personageInfo,
+			wp.photos,
       wt.warIntroduce
     FROM war_and_person as wap
     INNER JOIN war_timeline as wt ON wt.warID = wap.warID AND YEAR(wt.startTime) = ${year}
@@ -42,6 +47,8 @@ class WarInfoService extends Service {
     ORDER BY wt.startTime ASC;
     `);
     // 处理返回的数据
+    // CONCAT('"photos":"', wp.photos->>'$[*]', '",'),
+
     const data = [];
     result.forEach(item => {
       data.push({
@@ -51,10 +58,21 @@ class WarInfoService extends Service {
         warfareCenter: JSON.parse(item.warfareCenter),
         personageInfo: JSON.parse(item.personageInfo),
         warIntroduce: item.warIntroduce,
+        photos: item.photos,
+      });
+    });
+    // 处理日期数据
+    data.forEach(item => {
+      // item.parsonageInfo.forEach(pitem => {
+      //   pitem.a = 1;
+      // });
+      item.personageInfo.forEach(pitem => {
+        pitem.dead = dayjs(pitem.birthday).format('YYYY年-MM月-DD日—') + dayjs(pitem.deathdate).format('YYYY年-MM月-DD日');
       });
     });
     return data;
   }
 }
+
 
 module.exports = WarInfoService;

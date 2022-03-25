@@ -37,10 +37,10 @@
  *
  */
 
-/** 获取战争地图标点信息 /api/v1/warTime 战争地图标点信息
+/** 获取战争地图标点信息 /api/v1/warTime 战争地图标点信息和人物展示信息
  *
- * @api {GET} /api/v1/warTime 战争地图标点信息
- * @apiName 战争地图标点信息
+ * @api {GET} /api/v1/warTime 战争地图标点信息和人物展示信息
+ * @apiName 战争地图标点信息和人物展示信息
  * @apiGroup war
  * @apiVersion  1.0.0
  * @apiParam  {number} year=1937 年份 1937
