@@ -67,7 +67,7 @@ class WarInfoService extends Service {
       //   pitem.a = 1;
       // });
       item.personageInfo.forEach(pitem => {
-        pitem.dead = dayjs(pitem.birthday).format('YYYY年-MM月-DD日—') + dayjs(pitem.deathdate).format('YYYY年-MM月-DD日');
+        pitem.dead = dayjs(pitem.birthday).format('YYYY年MM月DD日—') + dayjs(pitem.deathdate).format('YYYY年MM月DD日');
       });
     });
     return data;
