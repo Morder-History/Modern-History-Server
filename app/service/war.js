@@ -30,6 +30,7 @@ class WarInfoService extends Service {
     CONCAT('[',
       GROUP_CONCAT(
       CONCAT('{"name":"', wp.name, '",'),
+      CONCAT('"personID":"', wp.personID, '",'),
       CONCAT('"birth":"', wp.birth, '",'),
       CONCAT('"jianjie":"', wp.jianjie, '",'),
       CONCAT('"picture":"', wp.picture, '",'),
@@ -68,6 +69,8 @@ class WarInfoService extends Service {
       // });
       item.personageInfo.forEach(pitem => {
         pitem.dead = dayjs(pitem.birthday).format('YYYY年MM月DD日—') + dayjs(pitem.deathdate).format('YYYY年MM月DD日');
+        // 1 中国  2 日本
+        pitem.nation = pitem.personID.substr(0, 1) === '1' ? '中国' : '日本';
       });
     });
     return data;
